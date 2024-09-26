@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+@import './reset';
+
+body {
+    font-family: "Rubik", sans-serif;
+    font-size: 18px;
+    margin: 0;
+}
+
+.header {
+    background: url(../assets/images/pattern-bg-mobile.png) no-repeat center center; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    width: 100%;
+    height: 30dvh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    
+    h1 {
+        margin-bottom: .5rem;
+        color: #fff;
+        font-weight: 500;
+    }
+
+    .input-field {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100px;
+        margin-bottom: 15px;
+        padding: 0 1rem;
+
+        input[type="text"] {
+            width: 70%;
+            height: 60%;
+            padding: 1.5rem;
+            border: 1px solid #ccc;
+            border-radius: 15px 0 0 15px;
+            font-size: 18px;
+        }
+
+        button.submit {
+            height: 60%;
+            width: 15%;
+            background-color: #000;
+            color: #fff;
+            border: none;
+            border-radius: 0 15px 15px 0;
+            cursor: pointer;
+        }
+    }
+}
+
+section {
+    position: relative;
+    width: 100%;
+    height: 70dvh;
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        margin-top: 1rem;
+        padding: 1rem;
+        border-radius: 15px;
+        background-color: #fff;
+        position: absolute;
+        top: -15%;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 10;
+        width: 80%;
+        height: max-content;
+        
+    
+        .data {
+            margin-bottom: 1rem;
+    
+            h4 {
+                margin: 0;
+                font-size: 120%;
+                margin-top: .5rem;
+                color: hsl(0, 0%, 17%);
+            }
+    
+            small {
+                font-size: 80%;
+                font-weight: 500;
+                color: hsl(0, 0%, 59%);
+            }
+        }
+    }
+}
+
+#map {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: bisque;
+    height: 100%;
+}

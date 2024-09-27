@@ -1,4 +1,4 @@
-import { SetStateAction, useEffect, useState } from "react"
+import { useState } from "react"
 import { Circle, MapContainer, Marker, Popup, TileLayer } from "react-leaflet"
 import 'leaflet/dist/leaflet.css'
 import { Icon } from "leaflet"

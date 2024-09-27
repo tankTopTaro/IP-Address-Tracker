@@ -24,7 +24,7 @@ const App = () => {
   const [isp, setISP] = useState('')
 
   const getCoord = async (ip: any) => {
-    const apiKey = process.env.API_KEY
+    const apiKey = process.env.REACT_APP_API_KEY
     const url = `https://geo.ipify.org/api/v2/country,city?apiKey=${apiKey}&ipAddress=${ip}`
     
     try {

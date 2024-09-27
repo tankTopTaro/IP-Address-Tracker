@@ -3,7 +3,9 @@ import { Circle, MapContainer, Marker, Popup, TileLayer } from "react-leaflet"
 import 'leaflet/dist/leaflet.css'
 import { Icon } from "leaflet"
 import pin from './assets/images/pin.png'
+import dotenv from 'dotenv'
 
+dotenv.config()
 interface Location {
   city: string
   country: string
@@ -22,7 +24,8 @@ const App = () => {
   const [isp, setISP] = useState('')
 
   const getCoord = async (ip: any) => {
-    const url = `https://geo.ipify.org/api/v2/country,city?apiKey=at_A8YHRwB8SzUdZpEUyO3dV25ayk0dB&ipAddress=${ip}`
+    const apiKey = process.env.API_KEY
+    const url = `https://geo.ipify.org/api/v2/country,city?apiKey=${apiKey}&ipAddress=${ip}`
     
     try {
       const response = await fetch(url)

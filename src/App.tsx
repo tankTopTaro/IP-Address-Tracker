@@ -3,9 +3,9 @@ import { Circle, MapContainer, Marker, Popup, TileLayer } from "react-leaflet"
 import 'leaflet/dist/leaflet.css'
 import { Icon } from "leaflet"
 import pin from './assets/images/pin.png'
-import dotenv from 'dotenv'
+/* import dotenv from 'dotenv'
 
-dotenv.config()
+dotenv.config() */
 interface Location {
   city: string
   country: string

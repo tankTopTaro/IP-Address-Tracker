@@ -45,7 +45,8 @@ h3, h4 {
 
 /* A elements that don't have a class get default styles */
 a:not([class]) {
-  text-decoration-skip-ink: auto;
+  -webkit-text-decoration-skip: ink;
+          text-decoration-skip-ink: auto;
   color: currentColor;
 }
 
@@ -81,9 +82,6 @@ body {
 
 .header {
   background: url(../assets/images/pattern-bg-mobile.png) no-repeat center center;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
   background-size: cover;
   width: 100%;
   height: 30dvh;
@@ -112,6 +110,11 @@ body {
   border: 1px solid #ccc;
   border-radius: 15px 0 0 15px;
   font-size: 18px;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+.header .input-field input[type=text]:focus {
+  outline: none;
 }
 .header .input-field button.submit {
   height: 60%;
@@ -121,6 +124,9 @@ body {
   border: none;
   border-radius: 0 15px 15px 0;
   cursor: pointer;
+}
+.header .input-field button.submit:hover {
+  background-color: hsl(0, 0%, 17%);
 }
 
 section {
@@ -144,7 +150,9 @@ section .container {
   transform: translateX(-50%);
   z-index: 10;
   width: 80%;
+  height: -moz-max-content;
   height: max-content;
+  transition: all 0.3s ease-in-out;
 }
 section .container .data {
   margin-bottom: 1rem;
@@ -160,11 +168,70 @@ section .container .data small {
   font-weight: 500;
   color: hsl(0, 0%, 59%);
 }
-
-#map {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: bisque;
+section .leaflet-container {
   height: 100%;
+  z-index: 1;
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  .header {
+    background: url(../assets/images/pattern-bg-desktop.png) no-repeat center center;
+    background-size: cover;
+  }
+  .header .input-field {
+    width: 60%;
+  }
+  section .container {
+    width: 50%;
+  }
+}
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  .header .input-field {
+    width: 50%;
+  }
+  section .container {
+    margin: 0;
+    width: 90%;
+    height: 180px;
+    gap: 1rem;
+    flex-direction: row;
+  }
+  section .container .data {
+    position: relative;
+    height: 100%;
+    width: 25%;
+    padding: 2rem 1.5rem;
+    text-align: start;
+  }
+  section .container .data:not(:first-child):after {
+    content: "";
+    height: 50%;
+    width: 1px;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #ccc;
+  }
+  section .container .data h4 {
+    margin-top: 1rem;
+    font-size: 120%;
+  }
+  section .container .data .location, section .container .data .isp {
+    text-wrap: wrap;
+  }
+}
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+  .header .input-field {
+    width: 70%;
+  }
+  .header .input-field button.submit {
+    width: 8%;
+  }
+  section .container .data h4 {
+    font-size: 150%;
+  }
 }/*# sourceMappingURL=styles.css.map */
